@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Glass</title>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 790px;
+        }
+
+        .container > div {
+            width: 250px;
+            height: 300px;
+            border: 2px solid black;
+            border-bottom-left-radius: 32px;
+            border-bottom-right-radius: 32px;
+        }
+
+        .container > div > div {
+            background-color: white;
+            height: 50px;
+        }
+
+        .tea {
+            background-color: #c18244;
+        }
+
+        .coffee {
+            background-color: #190e03;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="glass-a" class="tea" onclick="clicked(a)"><div></div></div>
+        <div id="glass-b" class="coffee" onclick="clicked(b)"><div></div></div>
+        <div id="glass-c" onclick="clicked(c)"><div></div></div>
+    </div>
+
+    <script>
+        const a = document.querySelector("#glass-a")
+        const b = document.querySelector("#glass-b")
+        const c = document.querySelector("#glass-c")
+
+        function clicked(glass) {
+            const fill = glass.getAttribute("class")
+            if (fill == "null") {
+                return
+            } else {
+                glass.setAttribute("class", "null")
+                next(fill)   
+            }
+        }
+
+        function next(fill) {
+            const target = document.
+            target.addEventListener("click", () => {
+                target.setAttribute("class", fill)
+            }, {once: true})
+        }
+
+        // a.addEventListener("click", () => {
+        // })
+        // b.addEventListener("click", () => {
+        //     const fill = b.getAttribute("class")
+        //     if (fill == "null") {
+        //         return
+        //     } else {
+        //         b.setAttribute("class", "null")
+        //         // target = glass.setAttribute("class", "fill")
+        //     }
+        // })
+        // c.addEventListener("click", () => {
+        //     const fill = c.getAttribute("class")
+        //     if (fill == "null") {
+        //         return
+        //     } else {
+        //         c.setAttribute("class", "null")
+        //         // target = glass.setAttribute("class", "fill")
+        //     }
+        // })
+    </script>
+</body>
+</html>
